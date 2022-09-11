@@ -18,7 +18,8 @@ abstract class AppTexts {
 
   // sign up texts
   static const String welcome = 'Welcome';
-  static const String welcomeMessage = 'PRO, please sign in with your student mail';
+  static const String welcomeMessage =
+      'PRO, please sign in with your student mail';
   static const String nameHintText = 'Name';
   static const String emailHintText = 'Student E-Mail';
   static const String emailHintText2 = 'E-Mail';
@@ -37,6 +38,11 @@ abstract class AppTexts {
   static const String adminSchool = 'BUSA';
   static const String type = 'admin';
 
+  //OTP
+  static const String otpVeri = 'OTP Verification';
+  static const String enterCode = 'Enter the 4 digit code sent to your email';
+  static const String verifyButton = 'Verify OTP';
+  // static const String type = 'admin';
 
   // login texts
   static const String hey = 'Hey';
@@ -53,7 +59,6 @@ abstract class AppTexts {
   // profile
   static const String profileHeader = 'P R O F I L E';
   static const String bookmarks = 'Bookmarks';
-
 }
 
 List<String> schools = [

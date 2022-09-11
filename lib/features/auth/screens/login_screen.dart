@@ -1,3 +1,4 @@
+// import 'package:email_otp/email_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:project_news_web_admin/features/auth/services/auth_services.dart';
@@ -7,6 +8,7 @@ import 'package:project_news_web_admin/shared/app_elements/app_texts.dart';
 import 'package:project_news_web_admin/shared/widgets/button.dart';
 import 'package:project_news_web_admin/shared/widgets/spacer.dart';
 import 'package:project_news_web_admin/shared/widgets/text_input.dart';
+// import 'package:email_auth/email_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,7 +23,17 @@ class _LoginScreenState extends State<LoginScreen> {
   final _loginFormKey = GlobalKey<FormState>();
   bool isPasswordInvisible = true;
   final AuthServices authServices = AuthServices();
+  // final EmailAuth emailAuth = EmailAuth(sessionName: 'Test');
 
+  // void sendOTP() async {
+  //   var res = await emailAuth.sendOtp(recipientMail: _emailController.text);
+  //   if (res) {
+  //     print('OTP sent');
+  //   } else {
+  //     print('We could not send OTP');
+  //   }
+  // }
+ 
   void loginUser() {
     authServices.signInAdmin(
       context: context,
@@ -142,6 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (_loginFormKey.currentState!.validate()) {
                             // sign in user
                             loginUser();
+                            // sendOTP();
                           }
                         },
                         item: Text(
