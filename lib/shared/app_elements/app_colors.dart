@@ -5,6 +5,7 @@ static const primaryGreen = Color(0xFF68BF50);
 static const primaryRed = Color(0xFFFF0000);
 static const primaryBlue = Color(0xFF1C4DA1);
 static const neutralWhite = Colors.white;
+static const someWhite = Color(0xFFE5E5E5);
 static const blue02 = Color(0xFF99BFFF);
 static const orange01 = Color(0xFFF83600);
 static const orange02 = Color(0xFFFE8C00);

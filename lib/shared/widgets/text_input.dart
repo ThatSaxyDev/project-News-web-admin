@@ -36,10 +36,10 @@ class TextInputBox extends StatelessWidget {
         //   color: AppColors.primaryBlue,
         // ),
         hintText: hintText,
-        fillColor: const Color.fromRGBO(245, 245, 245, 1),
+        fillColor: AppColors.someWhite,
         filled: true,
         hintStyle: TextStyle(
-          fontSize: 14.sp,
+          fontSize: 17.sp,
           fontWeight: FontWeight.w400,
           color: const Color.fromRGBO(125, 127, 129, 1),
         ),
@@ -47,7 +47,11 @@ class TextInputBox extends StatelessWidget {
           borderSide: BorderSide(color: AppColors.grey),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: AppColors.grey),
+          borderRadius: BorderRadius.circular(6.r),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.grey),
           borderRadius: BorderRadius.circular(6.r),
         ),
       ),
