@@ -41,6 +41,8 @@ dependencies:
   cherry_toast: ^1.0.8
   http: ^0.13.5
   provider: ^6.0.3
+  email_otp: ^1.0.4
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
