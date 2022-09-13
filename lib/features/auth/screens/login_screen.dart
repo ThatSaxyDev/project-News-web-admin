@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   //     print('We could not send OTP');
   //   }
   // }
- 
+
   void loginUser() {
     authServices.signInAdmin(
       context: context,
@@ -65,7 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
       body: AuthCentreBox(
         bottom: 216.h,
         top: 216.h,
-        horizontal: 424.w,
+        left: 424.w,
+        right: 424.w,
         child: SizedBox.expand(
           child: Padding(
             padding: EdgeInsets.only(

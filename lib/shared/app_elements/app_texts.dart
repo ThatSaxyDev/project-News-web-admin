@@ -2,6 +2,18 @@ abstract class AppTexts {
   // app name
   static const String appName = 'BUnews';
 
+  // upload news
+  static const String uploadImage = 'Upload Image';
+  static const String uploadNews = 'Upload News';
+  static const String uploadNewsLetter = 'Upload Newsletter';
+  static const String title = 'Title';
+  static const String author = 'Author';
+  static const String paragraph1 = 'Paragraph 1';
+  static const String paragraph2 = 'Paragraph 2';
+  static const String paragraph3 = 'Paragraph 3';
+  static const String paragraph4 = 'Paragraph 4';
+  static const String paragraph5 = 'Paragraph 5';
+
   // onboarding texts
   static const String skip = 'S K I P';
   static const String title1 = 'Get updated';

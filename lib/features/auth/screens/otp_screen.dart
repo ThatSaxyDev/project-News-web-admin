@@ -36,7 +36,8 @@ class _OTPScreenState extends State<OTPScreen> {
       body: AuthCentreBox(
         bottom: 333.h,
         top: 216.h,
-        horizontal: 424.w,
+        left: 424.w,
+        right: 424.w,
         child: SizedBox.expand(
           child: Padding(
             padding: EdgeInsets.only(

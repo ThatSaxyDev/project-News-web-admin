@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:project_news_web_admin/features/auth/screens/login_screen.dart';
 import 'package:project_news_web_admin/features/auth/screens/temp_home_screen.dart';
 import 'package:project_news_web_admin/features/auth/services/auth_services.dart';
+import 'package:project_news_web_admin/features/upload/screens/upload_news_screen.dart';
 import 'package:project_news_web_admin/providers/user_provider.dart';
 import 'package:project_news_web_admin/shared/app_elements/app_colors.dart';
 import 'package:project_news_web_admin/shared/app_elements/app_texts.dart';
