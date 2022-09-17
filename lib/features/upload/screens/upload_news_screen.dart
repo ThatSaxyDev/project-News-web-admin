@@ -103,11 +103,9 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.someWhite,
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: SizedBox(
-           width: width(context),
+          width: width(context),
           height: height(context),
           child: AuthCentreBox(
             left: 150.w,
@@ -144,13 +142,16 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                         height: 300.h,
                                         decoration: BoxDecoration(
                                           border: Border.all(),
-                                          borderRadius: BorderRadius.circular(10.r),
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
                                           // image: DecorationImage(
                                           //   image: MemoryImage(pickedWebImage),
                                           //   fit: BoxFit.fitWidth,
                                           // ),
                                         ),
-                                        child: Image.memory(pickedWebImage),
+                                        child: kIsWeb
+                                            ? Image.memory(pickedWebImage)
+                                            : Image.file(pickedImage!),
                                       ),
                                     )
                                   : GestureDetector(
@@ -162,8 +163,8 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                         borderType: BorderType.RRect,
                                         radius: Radius.circular(10.r),
                                         dashPattern: const [5, 4],
-                                        color:
-                                            const Color.fromRGBO(196, 196, 196, 1),
+                                        color: const Color.fromRGBO(
+                                            196, 196, 196, 1),
                                         child: Container(
                                           // width: 300.w,
                                           height: 300.h,
@@ -195,7 +196,7 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                         ),
                                       ),
                                     ),
-      
+
                               // title field
                               // Spc(h: 20.h),
                               TextInputField(
@@ -208,7 +209,7 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                   return null;
                                 },
                               ),
-      
+
                               // author field
                               // Spc(h: 10.h),
                               TextInputField(
@@ -222,7 +223,7 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                 },
                               ),
                               // Spc(h: 30.h),
-      
+
                               // upload the newsletter
                               pickedImage2 != null
                                   ? GestureDetector(
@@ -234,13 +235,16 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                         height: 300.h,
                                         decoration: BoxDecoration(
                                           border: Border.all(),
-                                          borderRadius: BorderRadius.circular(10.r),
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
                                           // image: DecorationImage(
                                           //   image: MemoryImage(pickedWebImage),
                                           //   fit: BoxFit.fitWidth,
                                           // ),
                                         ),
-                                        child: Image.memory(pickedWebNewsLetter),
+                                        child: kIsWeb
+                                            ? Image.memory(pickedWebNewsLetter)
+                                            : Image.file(pickedImage2!),
                                       ),
                                     )
                                   : GestureDetector(
@@ -252,8 +256,8 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                         borderType: BorderType.RRect,
                                         radius: Radius.circular(10.r),
                                         dashPattern: const [5, 4],
-                                        color:
-                                            const Color.fromRGBO(196, 196, 196, 1),
+                                        color: const Color.fromRGBO(
+                                            196, 196, 196, 1),
                                         child: Container(
                                           // width: 300.w,
                                           height: 300.h,
@@ -343,26 +347,41 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
                                 controller: _paragraph5Controller,
                               ),
                               Spc(h: 80.h),
-      
+
                               // button
                               Button(
                                 onTap: () {
                                   if (_uploadKey.currentState!.validate()) {
                                     String content =
                                         '${_paragraph1Controller.text}\n${_paragraph2Controller.text}\n${_paragraph3Controller.text}\n${_paragraph4Controller.text}\n${_paragraph5Controller.text}';
-      
+
                                     // upload news
                                     _adminServices.uploadNews(
                                       context: context,
-                                      image: File.fromRawPath(pickedWebImage),
+                                      image: kIsWeb
+                                          ? File.fromRawPath(pickedWebImage)
+                                          : pickedImage!,
                                       title: _titleController.text,
                                       author: _authorController.text,
                                       content: content,
                                       date: DateFormat('E, d MMM y - kk:mm')
                                           .format(DateTime.now()),
-                                      imageNewsletter:
-                                          File.fromRawPath(pickedWebNewsLetter),
+                                      imageNewsletter: kIsWeb
+                                          ? File.fromRawPath(
+                                              pickedWebNewsLetter)
+                                          : pickedImage2!,
                                     );
+                                    setState(() {
+                                      pickedImage = null;
+                                      pickedImage2 = null;
+                                      _titleController.clear();
+                                      _authorController.clear();
+                                      _paragraph1Controller.clear();
+                                      _paragraph2Controller.clear();
+                                      _paragraph3Controller.clear();
+                                      _paragraph4Controller.clear();
+                                      _paragraph5Controller.clear();
+                                    });
                                   }
                                 },
                                 item: Text(
@@ -384,8 +403,8 @@ class _UploadNewsScreenState extends State<UploadNewsScreen> {
             ),
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }
 

@@ -54,7 +54,7 @@ class AdminServices {
         response: res,
         context: context,
         onSuccess: () {
-          showAlert(context, 'Image Uploaded successfully');
+          showAlert(context, 'News Uploaded successfully');
         },
       );
     } catch (e) {

@@ -14,6 +14,12 @@ abstract class AppTexts {
   static const String paragraph4 = 'Paragraph 4';
   static const String paragraph5 = 'Paragraph 5';
 
+  // nav bar
+  static const String navBarText1 = 'Upload';
+  static const String navBarText2 = 'Gallery';
+  static const String navBarText3 = 'Settings';
+
+
   // onboarding texts
   static const String skip = 'S K I P';
   static const String title1 = 'Get updated';
